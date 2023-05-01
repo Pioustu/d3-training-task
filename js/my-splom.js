@@ -60,6 +60,7 @@ d3.csv('./data/Iris.csv', d3.autoType) // https://github.com/d3/d3-dsv#autoType
     let g_yAxis = svg.append("g")
       .attr('class', 'yAxis')
       .call(yAxis);
+    
 
     const cell = svg.append("g")
       .attr('class', 'gCell')
@@ -101,7 +102,7 @@ d3.csv('./data/Iris.csv', d3.autoType) // https://github.com/d3/d3-dsv#autoType
       })
 
     g_yAxis
-      .transition().duration(t_duration+ 50)
+      .transition().duration(t_duration + 50)
       .on('end', function() {
         d3.select(this).selectAll('.tick line')
           .transition().duration(t_duration * 2)
@@ -183,9 +184,9 @@ function cleanSvgChart(){
 }
 
 function drawChart(items){
-  let margin = {top:20, right:20, bottom:30, left:25}
-  let width = 390
-  let height = 400
+  let margin = {top:50, right:50, bottom:50, left:50}
+  let width = 580
+  let height = 550
   let color = "steelblue"
   let data1 = items.map(d => d[sepal_length])
   let draw_data = Object.assign(data1,{x: "SL/CM", y:"Counts/N"})
@@ -217,7 +218,7 @@ function drawChart(items){
     .call(d3.axisBottom(x_).ticks(width / 80 ).tickSizeOuter(0))
     .call(g => g.append("text")
       .attr("x", width - 1.6*margin.right)
-      .attr("y", 15)
+      .attr("y", 28)
       .attr("fill", "currentColor")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
@@ -229,7 +230,7 @@ function drawChart(items){
     .call(g => g.select(".domain").remove())
     .call(g => g.select(".tick:last-of-type text").clone()
       .attr("x", 0)
-      .attr("y", 10)
+      .attr("y", -28)
       .attr("text-anchor", "end")
       .attr("transform","rotate(-90)")
       .attr("font-weight", "bold")
