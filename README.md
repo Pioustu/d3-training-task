@@ -4,6 +4,7 @@ Introduce a simple case to help beginners learn d3.js.
 https://d3js.org/   
 https://observablehq.com/
 
+
 ## How to run
 ```
 cd d3-traing-task
